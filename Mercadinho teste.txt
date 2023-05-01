@@ -1,0 +1,64 @@
+CREATE TABLE Cliente (
+codigo INTEGER, 
+nome VARCHAR2 (30),
+cidade VARCHAR2 (20)
+);
+
+INSERT INTO Cliente(codigo,nome,cidade)
+VALUES (1,'Jonas Paulino', 'Cauaru');
+
+INSERT INTO Cliente(codigo,nome,cidade)
+VALUES (2,'Maria Heloisa', 'Cauaru');
+
+INSERT INTO Cliente(codigo,nome,cidade)
+VALUES (3,'Luciano Antonio ', 'Gravata');
+
+SELECT * FROM Cliente;
+
+SELECT codigo, cidade FROM Cliente;
+
+SELECT * FROM Cliente ORDER BY nome;
+
+SELECT * FROM Cliente ORDER BY nome DESC;
+
+SELECT nome,codigo FROM Cliente ORDER BY nome ASC;
+
+SELECT * FROM Cliente ORDER BY 3 DESC;
+
+SELECT * FROM Cliente ORDER BY 3,1 ASC;
+
+SELECT * FROM Cliente WHERE codigo = 2;
+
+SELECT * FROM Cliente WHERE codigo > 2;
+
+SELECT * FROM Cliente WHERE codigo <> 2;
+
+SELECT * FROM Cliente WHERE codigo <> 2 ORDER BY nome ;
+
+select * from Cliente where codigo = 1 or codigo = 3;
+
+select * from Cliente where cidade = 'Gravata';
+
+
+select * from Cliente where nome like '%Helo%';
+select * from Cliente where cidade not like '%Cau%';
+select * from Cliente where cidade not like '%Cau%' order by 1;
+
+/* 
+ Operador between 
+*/
+insert into Cliente values (5,'JULIA SANTOS', 'CHA GRANDE' );
+insert into Cliente values (6,'JUNIOR FILHO', 'RECIFE' );
+insert into Cliente values (7,'JOSE NORMANDO', 'RECIFE' );
+insert into Cliente values (8,'CARLOS FERNANDO', 'JABOATAO' );
+insert into Cliente values (9,'ANA PAULA', 'OLINDA' );
+
+select * from Cliente where codigo=4 or codigo = 5 or codigo = 6 or codigo = 7;
+select cidade, nome from cliente where codigo between 4 and 7 and nome like '%SA%' order by nome desc; 
+select * from Cliente where codigo = 4 or codigo = 7 or codigo = 9;
+select * from Cliente where codigo in (4,7,9);
+
+select * from Cliente where codigo in ('RECIFE', 'OLINDA');
+select * from Cliente where cidade in ('RECIFE', 'OLINDA') AND nome like 'J%';
+select codigo, nome from Cliente where codigo not in ('2', '5', '4') ORDER BY codigo;
+select * from Cliente where codigo <> 2 and codigo <> 5 and codigo <> 4;
