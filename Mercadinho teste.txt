@@ -62,3 +62,15 @@ select * from Cliente where codigo in ('RECIFE', 'OLINDA');
 select * from Cliente where cidade in ('RECIFE', 'OLINDA') AND nome like 'J%';
 select codigo, nome from Cliente where codigo not in ('2', '5', '4') ORDER BY codigo;
 select * from Cliente where codigo <> 2 and codigo <> 5 and codigo <> 4;
+
+SELECT * FROM Cli_cliente;
+
+DELETE FROM Cli_cliente;
+
+INSERT INTO Cli_cliente VALUES (1,'Julia Santos', 'Cha grande', 'F', 'PE');
+INSERT INTO Cli_cliente VALUES (2,'Junior filho', 'Recife', 'M', 'PB');
+INSERT INTO Cli_cliente VALUES (3,'Jose Normando', 'Recife', 'M', 'PE');
+INSERT INTO Cli_cliente VALUES (4,'Carlos Fernando', 'Jaboatao', 'M', 'PE');
+INSERT INTO Cli_cliente VALUES (5,'Ana Paula', 'Olinda', 'F', 'PB');
+
+UPDATE Cli_cliente SET cli_cidade ='Caruaru';
